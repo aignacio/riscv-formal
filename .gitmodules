@@ -1,6 +1,3 @@
-[submodule "riscorvo"]
-	path = riscorvo
-	url = git@github.com:aignacio/riscorvo.git
 [submodule "cores/riscorvo/riscorvo"]
 	path = cores/riscorvo/riscorvo
 	url = git@github.com:aignacio/riscorvo.git
