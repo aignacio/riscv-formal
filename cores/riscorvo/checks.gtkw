@@ -1,83 +1,330 @@
 [*]
-[*] GTKWave Analyzer v3.3.65 (w)1999-2015 BSI
-[*] Wed Sep 13 00:29:24 2017
+[*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
+[*] Thu May 16 15:09:01 2019
 [*]
-[dumpfile] "(null)"
-[savefile] "/home/clifford/Work/riscv-formal/cores/picorv32/checks.gtkw"
-[timestart] 0
-[size] 1263 878
-[pos] -1 -1
-*-6.814997 100 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[dumpfile] "/home/aignacio/projects/riscv-formal/cores/riscorvo/checks/insn_jalr_ch0/engine_0/trace.vcd"
+[dumpfile_mtime] "Thu May 16 14:55:40 2019"
+[dumpfile_size] 291994
+[savefile] "/home/aignacio/projects/riscv-formal/cores/riscorvo/checks.gtkw"
+[timestart] 30
+[size] 2560 1376
+[pos] 10239 81
+*-4.240555 153 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] rvfi_testbench.
+[treeopen] rvfi_testbench.checker_inst.
 [treeopen] rvfi_testbench.wrapper.
-[sst_width] 225
-[signals_width] 335
+[treeopen] rvfi_testbench.wrapper.uut.
+[sst_width] 229
+[signals_width] 276
 [sst_expanded] 1
-[sst_vpaned_height] 258
+[sst_vpaned_height] 1021
+@28
+rvfi_testbench.wrapper.reset
+rvfi_testbench.wrapper.clock
 @24
 smt_step
 @200
--
--PicoRV32
+-RISCorVoRV32
+@c00200
+-I_BUS_CORE
 @28
-rvfi_testbench.wrapper.uut.resetn
-@820
-rvfi_testbench.wrapper.uut.dbg_ascii_state[127:0]
-rvfi_testbench.wrapper.uut.dbg_ascii_instr[63:0]
-@200
--
-@28
-rvfi_testbench.wrapper.mem_valid
-rvfi_testbench.wrapper.mem_ready
-rvfi_testbench.wrapper.mem_instr
+rvfi_testbench.wrapper.valid_instr
+rvfi_testbench.wrapper.ready_instr
 @22
-rvfi_testbench.wrapper.mem_addr[31:0]
-rvfi_testbench.wrapper.mem_wstrb[3:0]
-rvfi_testbench.wrapper.mem_rdata[31:0]
-rvfi_testbench.wrapper.mem_wdata[31:0]
+rvfi_testbench.wrapper.data_instr[31:0]
+rvfi_testbench.wrapper.addr_instr[31:0]
+@1401200
+-I_BUS_CORE
+@c00200
+-D_BUS_CORE
+@28
+rvfi_testbench.wrapper.valid_data
+rvfi_testbench.wrapper.ready_data
+@22
+rvfi_testbench.wrapper.addr_data[31:0]
+rvfi_testbench.wrapper.write_data[31:0]
+@28
+rvfi_testbench.wrapper.read_write
+@22
+rvfi_testbench.wrapper.mask_data[3:0]
+rvfi_testbench.wrapper.read_data[31:0]
+@1401200
+-D_BUS_CORE
+@c00200
+-pc_pc_next
+@22
+rvfi_testbench.wrapper.uut.pc_if_id[31:0]
+rvfi_testbench.wrapper.uut.pc_id_ex[31:0]
+rvfi_testbench.wrapper.uut.pc_ex_mem[31:0]
+rvfi_testbench.wrapper.uut.pc_mem_wb[31:0]
+rvfi_testbench.wrapper.uut.pc_wdata_if_id[31:0]
+rvfi_testbench.wrapper.uut.pc_wdata_id_ex[31:0]
+rvfi_testbench.wrapper.uut.pc_wdata_ex_mem[31:0]
+rvfi_testbench.wrapper.uut.pc_wdata_mem_wb[31:0]
+@1401200
+-pc_pc_next
 @200
--
+-PIPELINE_REGS
+@22
+[color] 1
+rvfi_testbench.wrapper.uut.instr_if_id[31:0]
+[color] 2
+rvfi_testbench.wrapper.uut.instr_id_ex[31:0]
+[color] 3
+rvfi_testbench.wrapper.uut.instr_ex_mem[31:0]
+[color] 4
+rvfi_testbench.wrapper.uut.instr_mem_wb[31:0]
+@28
+rvfi_testbench.wrapper.uut.control.illegal_instr
+rvfi_testbench.wrapper.uut.control.illegal_address_i
+rvfi_testbench.wrapper.uut.exec.take_branch_o
+@29
+rvfi_testbench.wrapper.uut.stall
+@200
 -RVFI
 @28
-rvfi_testbench.checker_inst.reset
-rvfi_testbench.checker_inst.trig
+[color] 7
 rvfi_testbench.checker_inst.check
-@200
--
+@22
+rvfi_testbench.wrapper.uut.rvfi_insn[31:0]
 @28
-rvfi_testbench.checker_inst.rvfi_valid
-rvfi_testbench.checker_inst.rvfi_trap
-rvfi_testbench.checker_inst.rvfi_intr
-rvfi_testbench.checker_inst.rvfi_halt
+rvfi_testbench.wrapper.rvfi_valid
+rvfi_testbench.wrapper.rvfi_trap
+@c00024
+rvfi_testbench.wrapper.rvfi_order[63:0]
+@28
+(0)rvfi_testbench.wrapper.rvfi_order[63:0]
+(1)rvfi_testbench.wrapper.rvfi_order[63:0]
+(2)rvfi_testbench.wrapper.rvfi_order[63:0]
+(3)rvfi_testbench.wrapper.rvfi_order[63:0]
+(4)rvfi_testbench.wrapper.rvfi_order[63:0]
+(5)rvfi_testbench.wrapper.rvfi_order[63:0]
+(6)rvfi_testbench.wrapper.rvfi_order[63:0]
+(7)rvfi_testbench.wrapper.rvfi_order[63:0]
+(8)rvfi_testbench.wrapper.rvfi_order[63:0]
+(9)rvfi_testbench.wrapper.rvfi_order[63:0]
+(10)rvfi_testbench.wrapper.rvfi_order[63:0]
+(11)rvfi_testbench.wrapper.rvfi_order[63:0]
+(12)rvfi_testbench.wrapper.rvfi_order[63:0]
+(13)rvfi_testbench.wrapper.rvfi_order[63:0]
+(14)rvfi_testbench.wrapper.rvfi_order[63:0]
+(15)rvfi_testbench.wrapper.rvfi_order[63:0]
+(16)rvfi_testbench.wrapper.rvfi_order[63:0]
+(17)rvfi_testbench.wrapper.rvfi_order[63:0]
+(18)rvfi_testbench.wrapper.rvfi_order[63:0]
+(19)rvfi_testbench.wrapper.rvfi_order[63:0]
+(20)rvfi_testbench.wrapper.rvfi_order[63:0]
+(21)rvfi_testbench.wrapper.rvfi_order[63:0]
+(22)rvfi_testbench.wrapper.rvfi_order[63:0]
+(23)rvfi_testbench.wrapper.rvfi_order[63:0]
+(24)rvfi_testbench.wrapper.rvfi_order[63:0]
+(25)rvfi_testbench.wrapper.rvfi_order[63:0]
+(26)rvfi_testbench.wrapper.rvfi_order[63:0]
+(27)rvfi_testbench.wrapper.rvfi_order[63:0]
+(28)rvfi_testbench.wrapper.rvfi_order[63:0]
+(29)rvfi_testbench.wrapper.rvfi_order[63:0]
+(30)rvfi_testbench.wrapper.rvfi_order[63:0]
+(31)rvfi_testbench.wrapper.rvfi_order[63:0]
+(32)rvfi_testbench.wrapper.rvfi_order[63:0]
+(33)rvfi_testbench.wrapper.rvfi_order[63:0]
+(34)rvfi_testbench.wrapper.rvfi_order[63:0]
+(35)rvfi_testbench.wrapper.rvfi_order[63:0]
+(36)rvfi_testbench.wrapper.rvfi_order[63:0]
+(37)rvfi_testbench.wrapper.rvfi_order[63:0]
+(38)rvfi_testbench.wrapper.rvfi_order[63:0]
+(39)rvfi_testbench.wrapper.rvfi_order[63:0]
+(40)rvfi_testbench.wrapper.rvfi_order[63:0]
+(41)rvfi_testbench.wrapper.rvfi_order[63:0]
+(42)rvfi_testbench.wrapper.rvfi_order[63:0]
+(43)rvfi_testbench.wrapper.rvfi_order[63:0]
+(44)rvfi_testbench.wrapper.rvfi_order[63:0]
+(45)rvfi_testbench.wrapper.rvfi_order[63:0]
+(46)rvfi_testbench.wrapper.rvfi_order[63:0]
+(47)rvfi_testbench.wrapper.rvfi_order[63:0]
+(48)rvfi_testbench.wrapper.rvfi_order[63:0]
+(49)rvfi_testbench.wrapper.rvfi_order[63:0]
+(50)rvfi_testbench.wrapper.rvfi_order[63:0]
+(51)rvfi_testbench.wrapper.rvfi_order[63:0]
+(52)rvfi_testbench.wrapper.rvfi_order[63:0]
+(53)rvfi_testbench.wrapper.rvfi_order[63:0]
+(54)rvfi_testbench.wrapper.rvfi_order[63:0]
+(55)rvfi_testbench.wrapper.rvfi_order[63:0]
+(56)rvfi_testbench.wrapper.rvfi_order[63:0]
+(57)rvfi_testbench.wrapper.rvfi_order[63:0]
+(58)rvfi_testbench.wrapper.rvfi_order[63:0]
+(59)rvfi_testbench.wrapper.rvfi_order[63:0]
+(60)rvfi_testbench.wrapper.rvfi_order[63:0]
+(61)rvfi_testbench.wrapper.rvfi_order[63:0]
+(62)rvfi_testbench.wrapper.rvfi_order[63:0]
+(63)rvfi_testbench.wrapper.rvfi_order[63:0]
+@1401200
+-group_end
+@24
+rvfi_testbench.wrapper.rvfi_mode[1:0]
+@28
+rvfi_testbench.wrapper.rvfi_intr
 @200
 -
-@25
-rvfi_testbench.checker_inst.rvfi_order[63:0]
+@24
+rvfi_testbench.wrapper.rvfi_rs1_addr[4:0]
+rvfi_testbench.wrapper.rvfi_rs2_addr[4:0]
+rvfi_testbench.wrapper.rvfi_rd_addr[4:0]
+@c00420
+rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+@28
+(0)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(1)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(2)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(3)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(4)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(5)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(6)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(7)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(8)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(9)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(10)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(11)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(12)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(13)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(14)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(15)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(16)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(17)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(18)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(19)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(20)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(21)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(22)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(23)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(24)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(25)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(26)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(27)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(28)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(29)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(30)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+(31)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
+@1401200
+-group_end
+@420
+rvfi_testbench.wrapper.rvfi_rs2_rdata[31:0]
+@24
+rvfi_testbench.wrapper.rvfi_rd_wdata[31:0]
+@200
+-
 @22
-rvfi_testbench.checker_inst.rvfi_insn[31:0]
-rvfi_testbench.checker_inst.rvfi_pc_rdata[31:0]
-rvfi_testbench.checker_inst.rvfi_pc_wdata[31:0]
+rvfi_testbench.wrapper.rvfi_pc_rdata[31:0]
+rvfi_testbench.wrapper.rvfi_pc_wdata[31:0]
+@200
+-
+@c00200
+-mem
+@22
+rvfi_testbench.wrapper.rvfi_mem_addr[31:0]
+rvfi_testbench.wrapper.rvfi_mem_rdata[31:0]
+@28
+rvfi_testbench.wrapper.rvfi_mem_rmask[3:0]
+rvfi_testbench.wrapper.rvfi_mem_wmask[3:0]
+@22
+rvfi_testbench.wrapper.rvfi_mem_wdata[31:0]
+@1401200
+-mem
+@200
+-SPEC
+@28
+rvfi_testbench.checker_inst.insn_spec.spec_trap
+rvfi_testbench.checker_inst.insn_spec.spec_valid
+@200
+-
+@24
+rvfi_testbench.checker_inst.insn_spec.spec_rs1_addr[4:0]
+rvfi_testbench.checker_inst.insn_spec.spec_rs2_addr[4:0]
+rvfi_testbench.checker_inst.insn_spec.spec_rd_addr[4:0]
+@c00420
+rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+@28
+[color] 2
+(0)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(1)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(2)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(3)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(4)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(5)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(6)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(7)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(8)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(9)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(10)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(11)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(12)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(13)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(14)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(15)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(16)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(17)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(18)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(19)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(20)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(21)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(22)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(23)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(24)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(25)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(26)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(27)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(28)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(29)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(30)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+[color] 2
+(31)rvfi_testbench.checker_inst.insn_spec.spec_rd_wdata[31:0]
+@1401200
+-group_end
 @200
 -
 @22
-rvfi_testbench.checker_inst.rvfi_rs1_addr[4:0]
-rvfi_testbench.checker_inst.rvfi_rs2_addr[4:0]
-rvfi_testbench.checker_inst.rvfi_rd_addr[4:0]
+rvfi_testbench.checker_inst.insn_spec.spec_pc_wdata[31:0]
 @200
 -
+@c00200
+-mem
 @22
-rvfi_testbench.checker_inst.rvfi_rs1_rdata[31:0]
-rvfi_testbench.checker_inst.rvfi_rs2_rdata[31:0]
-rvfi_testbench.checker_inst.rvfi_rd_wdata[31:0]
-@200
--
+rvfi_testbench.checker_inst.insn_spec.spec_mem_addr[31:0]
+@28
+rvfi_testbench.checker_inst.insn_spec.spec_mem_rmask[3:0]
+rvfi_testbench.checker_inst.insn_spec.spec_mem_wmask[3:0]
 @22
-rvfi_testbench.checker_inst.rvfi_mem_addr[31:0]
-rvfi_testbench.checker_inst.rvfi_mem_rmask[3:0]
-rvfi_testbench.checker_inst.rvfi_mem_wmask[3:0]
-rvfi_testbench.checker_inst.rvfi_mem_rdata[31:0]
-rvfi_testbench.checker_inst.rvfi_mem_wdata[31:0]
-@200
--
+rvfi_testbench.checker_inst.insn_spec.spec_mem_wdata[31:0]
+@1401200
+-mem
 [pattern_trace] 1
 [pattern_trace] 0
