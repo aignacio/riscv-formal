@@ -3,6 +3,7 @@ module rvfi_wrapper (
 	input         reset,
 	`RVFI_OUTPUTS
 );
+	(* keep *) wire        trap;
 	(* keep *) wire        valid_instr;
 	(* keep *) wire [31:0] addr_instr;
 	(* keep *) `rvformal_rand_reg        ready_instr;
@@ -22,6 +23,7 @@ module rvfi_wrapper (
 	) uut (
 		.clk(clock),
 		.reset_n(!reset),
+		.trap_o(trap),
 		// Instruction memory interface
 		.valid_instr_o(valid_instr),
 		.ready_instr_i(ready_instr),
@@ -38,5 +40,13 @@ module rvfi_wrapper (
 		`RVFI_CONN
 	);
 
+`ifdef RISCORVO_FAIRNESS
+	reg [2:0] mem_wait = 0;
+	always @(posedge clock) begin
+		mem_wait <= {mem_wait, valid_data && !ready_data};
+		assume(~mem_wait || trap);
+		assume(~valid_instr && ~ready_instr);
+	end
+`endif
 endmodule
 
