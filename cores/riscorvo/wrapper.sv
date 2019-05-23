@@ -19,7 +19,8 @@ module rvfi_wrapper (
 
 	riscorvo_top #(
 		.FIFO_SLOTS(2),
-		.RESET_ADDRESS(32'd0000_0000)
+		.RESET_ADDRESS(32'd0000_0000),
+		.DISABLE_MISALIGN_ADDRESS(1)
 	) uut (
 		.clk(clock),
 		.reset_n(!reset),
@@ -44,8 +45,7 @@ module rvfi_wrapper (
 	reg [2:0] mem_wait = 0;
 	always @(posedge clock) begin
 		mem_wait <= {mem_wait, valid_data && !ready_data};
-		assume(~mem_wait || trap);
-		assume(~valid_instr && ~ready_instr);
+		restrict(~mem_wait || trap);
 	end
 `endif
 endmodule
