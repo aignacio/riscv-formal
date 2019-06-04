@@ -3,3 +3,4 @@ complete
 /checks/
 /disasm.s
 /disasm.o
+/.vscode

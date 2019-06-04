@@ -1,25 +1,43 @@
 #!/bin/bash
 set -ex
 yosys -p '
-	read_verilog picorv32.v
-	chparam -set COMPRESSED_ISA 0 -set BARREL_SHIFTER 1 picorv32
-	prep -flatten -top picorv32
+	read_verilog riscorvo/src/alu_unit.v
+	read_verilog riscorvo/src/branch_unit.v
+	read_verilog riscorvo/src/control_unit.v
+	read_verilog riscorvo/src/data_interface.v
+	read_verilog riscorvo/src/dec_unit.v
+	read_verilog riscorvo/src/exec_unit.v
+	read_verilog riscorvo/src/fetch_unit.v
+	read_verilog riscorvo/src/forward_unit.v
+	read_verilog riscorvo/src/hazard_unit.v
+	read_verilog riscorvo/src/imm_gen.v
+	read_verilog riscorvo/src/mem_unit.v
+	read_verilog riscorvo/src/prefetch_fifo.v
+	read_verilog riscorvo/src/register_file.v
+	read_verilog riscorvo/src/riscorvo_top.v
+	read_verilog riscorvo/src/wb_unit.v
+	chparam -set ENABLE_MISALIGN_ADDR 0 riscorvo_top
+	prep -flatten -top riscorvo_top
 	design -stash gold
 
-	read_verilog -D RISCV_FORMAL picorv32.v
-	chparam -set COMPRESSED_ISA 0 -set BARREL_SHIFTER 1 picorv32
-	prep -flatten -top picorv32
-	delete -port picorv32/rvfi_*
+	read_verilog riscorvo/src/alu_unit.v
+	read_verilog riscorvo/src/branch_unit.v
+	read_verilog riscorvo/src/control_unit.v
+	read_verilog riscorvo/src/data_interface.v
+	read_verilog riscorvo/src/dec_unit.v
+	read_verilog riscorvo/src/exec_unit.v
+	read_verilog riscorvo/src/fetch_unit.v
+	read_verilog riscorvo/src/forward_unit.v
+	read_verilog riscorvo/src/hazard_unit.v
+	read_verilog riscorvo/src/imm_gen.v
+	read_verilog riscorvo/src/mem_unit.v
+	read_verilog riscorvo/src/prefetch_fifo.v
+	read_verilog riscorvo/src/register_file.v
+	read_verilog -D RISCV_FORMAL riscorvo/src/riscorvo_top.v
+	read_verilog riscorvo/src/wb_unit.v
+	chparam -set ENABLE_MISALIGN_ADDR 0 riscorvo_top
+	prep -flatten -top riscorvo_top
+	delete -port riscorvo_top/rvfi_*
 	design -stash gate
 
-	design -copy-from gold -as gold picorv32
-	design -copy-from gate -as gate picorv32
-	memory_map; opt -fast
-	equiv_make gold gate equiv
-	hierarchy -top equiv
-
-	opt -fast
-	equiv_simple
-	equiv_induct
-	equiv_status -assert
 '

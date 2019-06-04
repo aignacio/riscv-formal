@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
-[*] Wed May 22 10:34:57 2019
+[*] Wed May 29 12:48:38 2019
 [*]
-[dumpfile] "/home/aignacio/projects/riscv-formal/cores/riscorvo/checks/insn_addi_ch0/engine_0/trace.vcd"
-[dumpfile_mtime] "Wed May 22 10:22:01 2019"
-[dumpfile_size] 294433
+[dumpfile] "/home/aignacio/projects/riscv-formal/cores/riscorvo/checks/insn_c_li_ch0/engine_0/trace.vcd"
+[dumpfile_mtime] "Wed May 29 12:43:29 2019"
+[dumpfile_size] 306492
 [savefile] "/home/aignacio/projects/riscv-formal/cores/riscorvo/checks.gtkw"
 [timestart] 38
 [size] 2560 1376
-[pos] 13439 81
-*-4.224317 164 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] 16639 81
+*-4.224317 171 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] rvfi_testbench.
 [treeopen] rvfi_testbench.checker_inst.
 [treeopen] rvfi_testbench.wrapper.
@@ -17,7 +17,7 @@
 [sst_width] 229
 [signals_width] 350
 [sst_expanded] 1
-[sst_vpaned_height] 516
+[sst_vpaned_height] 1021
 @28
 rvfi_testbench.wrapper.reset
 rvfi_testbench.wrapper.clock
@@ -63,15 +63,17 @@ rvfi_testbench.wrapper.uut.pc_wdata_ex_mem[31:0]
 rvfi_testbench.wrapper.uut.pc_wdata_mem_wb[31:0]
 @1401200
 -pc_pc_next
-@29
-rvfi_testbench.wrapper.uut.trap
+@23
+rvfi_testbench.wrapper.uut.immediate_value[31:0]
+@22
+rvfi_testbench.wrapper.uut.pc_if_id_reg[31:0]
 @28
+rvfi_testbench.wrapper.uut.trap
 rvfi_testbench.wrapper.uut.control.illegal_instr
 rvfi_testbench.wrapper.uut.control.illegal_address_i
 rvfi_testbench.wrapper.uut.exec.take_branch_o
 rvfi_testbench.wrapper.uut.freeze
 rvfi_testbench.wrapper.uut.stall_hazard
-rvfi_testbench.wrapper.uut.instr_flush
 @200
 -PIPELINE_REGS
 @22
@@ -243,15 +245,15 @@ rvfi_testbench.wrapper.rvfi_mem_wdata[31:0]
 -mem
 @200
 -SPEC
+@22
+rvfi_testbench.checker_inst.insn_spec.insn_imm[31:0]
 @28
 rvfi_testbench.checker_inst.insn_spec.spec_trap
 rvfi_testbench.checker_inst.insn_spec.spec_valid
 @200
 -
 @24
-rvfi_testbench.checker_inst.insn_spec.spec_rs1_addr[4:0]
 rvfi_testbench.checker_inst.insn_spec.spec_rs2_addr[4:0]
-rvfi_testbench.checker_inst.insn_spec.spec_rd_addr[4:0]
 @200
 -
 @22

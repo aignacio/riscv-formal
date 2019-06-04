@@ -20,7 +20,8 @@ module rvfi_wrapper (
 	riscorvo_top #(
 		.FIFO_SLOTS(2),
 		.RESET_ADDRESS(32'd0000_0000),
-		.DISABLE_MISALIGN_ADDRESS(1)
+		.ENABLE_COMPRESSED_ISA(1),
+		.ENABLE_MISALIGN_ADDR(0)
 	) uut (
 		.clk(clock),
 		.reset_n(!reset),
