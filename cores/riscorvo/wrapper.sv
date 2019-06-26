@@ -25,7 +25,7 @@ module rvfi_wrapper (
 	) uut (
 		.clk(clock),
 		.reset_n(!reset),
-		.trap_o(trap),
+		.sync_trap_o(trap),
 		// Instruction memory interface
 		.valid_instr_o(valid_instr),
 		.ready_instr_i(ready_instr),
