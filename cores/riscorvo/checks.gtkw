@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
-[*] Wed May 29 12:48:38 2019
+[*] Thu Jul  4 18:38:14 2019
 [*]
-[dumpfile] "/home/aignacio/projects/riscv-formal/cores/riscorvo/checks/insn_c_li_ch0/engine_0/trace.vcd"
-[dumpfile_mtime] "Wed May 29 12:43:29 2019"
-[dumpfile_size] 306492
+[dumpfile] "/home/aignacio/projects/riscv-formal/cores/riscorvo/checks/insn_lw_ch0/engine_0/trace.vcd"
+[dumpfile_mtime] "Thu Jul  4 18:32:58 2019"
+[dumpfile_size] 409240
 [savefile] "/home/aignacio/projects/riscv-formal/cores/riscorvo/checks.gtkw"
-[timestart] 38
-[size] 2560 1376
-[pos] 16639 81
-*-4.224317 171 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[timestart] 0
+[size] 1920 1043
+[pos] 22399 162
+*-5.191896 195 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] rvfi_testbench.
 [treeopen] rvfi_testbench.checker_inst.
 [treeopen] rvfi_testbench.wrapper.
@@ -17,7 +17,7 @@
 [sst_width] 229
 [signals_width] 350
 [sst_expanded] 1
-[sst_vpaned_height] 1021
+[sst_vpaned_height] 670
 @28
 rvfi_testbench.wrapper.reset
 rvfi_testbench.wrapper.clock
@@ -35,7 +35,7 @@ rvfi_testbench.wrapper.data_instr[31:0]
 rvfi_testbench.wrapper.addr_instr[31:0]
 @1401200
 -I_BUS_CORE
-@c00200
+@800200
 -D_BUS_CORE
 @28
 rvfi_testbench.wrapper.valid_data
@@ -48,9 +48,9 @@ rvfi_testbench.wrapper.read_write
 rvfi_testbench.wrapper.mask_data[3:0]
 @22
 rvfi_testbench.wrapper.read_data[31:0]
-@1401200
+@1000200
 -D_BUS_CORE
-@c00200
+@800200
 -pc_pc_next
 @22
 rvfi_testbench.wrapper.uut.pc_if_id[31:0]
@@ -61,31 +61,42 @@ rvfi_testbench.wrapper.uut.pc_wdata_if_id[31:0]
 rvfi_testbench.wrapper.uut.pc_wdata_id_ex[31:0]
 rvfi_testbench.wrapper.uut.pc_wdata_ex_mem[31:0]
 rvfi_testbench.wrapper.uut.pc_wdata_mem_wb[31:0]
-@1401200
+@1000200
 -pc_pc_next
-@23
-rvfi_testbench.wrapper.uut.immediate_value[31:0]
-@22
-rvfi_testbench.wrapper.uut.pc_if_id_reg[31:0]
-@28
-rvfi_testbench.wrapper.uut.trap
-rvfi_testbench.wrapper.uut.control.illegal_instr
-rvfi_testbench.wrapper.uut.control.illegal_address_i
-rvfi_testbench.wrapper.uut.exec.take_branch_o
-rvfi_testbench.wrapper.uut.freeze
-rvfi_testbench.wrapper.uut.stall_hazard
 @200
 -PIPELINE_REGS
+@c00201
+-test
+@28
+rvfi_testbench.wrapper.uut.freeze
+[color] 6
+rvfi_testbench.wrapper.uut.control.interrupt_i
+rvfi_testbench.wrapper.uut.control.freeze_wfi_1st
+rvfi_testbench.wrapper.uut.control.freeze_wfi_2st
+rvfi_testbench.wrapper.uut.control.freeze_wfi_3st
+[color] 7
+rvfi_testbench.wrapper.uut.control.wfi_waiting
+rvfi_testbench.wrapper.uut.control.mret_instr
+rvfi_testbench.wrapper.uut.control.take_branch_i
+rvfi_testbench.wrapper.uut.control.sync_trap_i
+rvfi_testbench.wrapper.uut.control.instr_flush_if_id
+rvfi_testbench.wrapper.uut.control.instr_flush_id_ex
+rvfi_testbench.wrapper.uut.control.mem_write_1st
+rvfi_testbench.wrapper.uut.control.mem_write_2st
+rvfi_testbench.wrapper.uut.control.mem_write_3st
+rvfi_testbench.wrapper.uut.mem_write
+rvfi_testbench.wrapper.uut.valid_condition_instr
+@1401201
+-test
 @22
-[color] 1
+[color] 3
 rvfi_testbench.wrapper.uut.instr_if_id[31:0]
-[color] 2
+[color] 3
 rvfi_testbench.wrapper.uut.instr_id_ex[31:0]
 [color] 3
 rvfi_testbench.wrapper.uut.instr_ex_mem[31:0]
-[color] 4
+[color] 3
 rvfi_testbench.wrapper.uut.instr_mem_wb[31:0]
-rvfi_testbench.wrapper.uut.exec.alu_result_o[31:0]
 @28
 rvfi_testbench.wrapper.uut.control.sel_pc_o
 @22
@@ -183,7 +194,7 @@ rvfi_testbench.wrapper.rvfi_intr
 rvfi_testbench.wrapper.rvfi_rs1_addr[4:0]
 rvfi_testbench.wrapper.rvfi_rs2_addr[4:0]
 rvfi_testbench.wrapper.rvfi_rd_addr[4:0]
-@c00420
+@c00022
 rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
 @28
 (0)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
@@ -218,7 +229,7 @@ rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
 (29)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
 (30)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
 (31)rvfi_testbench.wrapper.rvfi_rs1_rdata[31:0]
-@1401200
+@1401202
 -group_end
 @420
 rvfi_testbench.wrapper.rvfi_rs2_rdata[31:0]
@@ -231,6 +242,8 @@ rvfi_testbench.wrapper.rvfi_pc_rdata[31:0]
 rvfi_testbench.wrapper.rvfi_pc_wdata[31:0]
 @200
 -
+@28
+rvfi_testbench.wrapper.uut.mask_data_o[3:0]
 @800200
 -mem
 @22

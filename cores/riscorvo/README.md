@@ -36,3 +36,9 @@ Then you can run the same script to see the output log and also the VCD with the
 ```
 ./debug.sh insn_c_bnez_ch0
 ```
+
+To run individual tests you can specify just the SymbiYosys script like this:
+
+```
+sby checks/insn_lw_ch0.sby 
+```

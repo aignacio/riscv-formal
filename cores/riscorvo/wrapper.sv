@@ -17,11 +17,25 @@ module rvfi_wrapper (
 	(* keep *) `rvformal_rand_reg        ready_data;
 	(* keep *) `rvformal_rand_reg [31:0] read_data;
 
-	riscorvo_top #(
-		.FIFO_SLOTS(2),
-		.RESET_ADDRESS(32'd0000_0000),
-		.ENABLE_COMPRESSED_ISA(1),
-		.ENABLE_MISALIGN_ADDR(0)
+	localparam MTIME_ADDR = 32'hA000_0000;
+	localparam MTIMEH_ADDR = 32'hA000_0004;
+	localparam MTIMECMP_ADDR = 32'hA000_0008;
+	localparam MTIMECMPH_ADDR = 32'hA000_000C;
+	localparam MTIMEDIV_ADDR = 32'hA000_0010;
+
+	riscorvo_top # (
+		.FIFO_SLOTS(8),
+  		.RESET_ADDRESS(32'h0000_0000),
+  		.TRAP_BASE_ADDR(32'h0000_0000),
+  		.ENABLE_COMPRESSED_ISA(1),
+  		.ENABLE_MULT_DIV_ISA(1),
+  		.ENABLE_MISALIGN_ADDR(0),
+  		.ENABLE_CUSTOM_ISA(0),
+  		.MTIME_ADDR(MTIME_ADDR),
+  		.MTIMEH_ADDR(MTIMEH_ADDR),
+  		.MTIMECMP_ADDR(MTIMECMP_ADDR),
+  		.MTIMECMPH_ADDR(MTIMECMPH_ADDR),
+  		.MTIMEDIV_ADDR(MTIMEDIV_ADDR)
 	) uut (
 		.clk(clock),
 		.reset_n(!reset),
@@ -42,7 +56,17 @@ module rvfi_wrapper (
 		`RVFI_CONN
 	);
 
+	// Avoid to enter in the MM registers
+	always @ (*) begin
+		assume(addr_data != MTIME_ADDR);
+		assume(addr_data != MTIMEH_ADDR);
+		assume(addr_data != MTIMECMP_ADDR);
+		assume(addr_data != MTIMECMPH_ADDR);
+		assume(addr_data != MTIMEDIV_ADDR);
+	end
+	
 `ifdef RISCORVO_FAIRNESS
+
 	reg [2:0] mem_wait = 0;
 	always @(posedge clock) begin
 		mem_wait <= {mem_wait, valid_data && !ready_data};
