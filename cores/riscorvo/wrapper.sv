@@ -3,6 +3,7 @@ module rvfi_wrapper (
 	input         reset,
 	`RVFI_OUTPUTS
 );
+	(* keep *) wire [31:0] addr_data_mem;
 	(* keep *) wire        trap;
 	(* keep *) wire        valid_instr;
 	(* keep *) wire [31:0] addr_instr;
@@ -40,6 +41,7 @@ module rvfi_wrapper (
 		.clk(clock),
 		.reset_n(!reset),
 		.sync_trap_o(trap),
+		.addr_data_mem_o(addr_data_mem),
 		// Instruction memory interface
 		.valid_instr_o(valid_instr),
 		.ready_instr_i(ready_instr),
@@ -58,13 +60,11 @@ module rvfi_wrapper (
 
 	// Avoid to enter in the MM registers
 	always @ (*) begin
-		assume(addr_data != MTIME_ADDR);
-		assume(addr_data != MTIMEH_ADDR);
-		assume(addr_data != MTIMECMP_ADDR);
-		assume(addr_data != MTIMECMPH_ADDR);
-		assume(addr_data != MTIMEDIV_ADDR);
+		assume(addr_data_mem < 32'hA000_0000);
+		assume(ready_instr);
+		assume(trap == 1'b0);
 	end
-	
+
 `ifdef RISCORVO_FAIRNESS
 
 	reg [2:0] mem_wait = 0;
