@@ -26,21 +26,26 @@ module rvfi_wrapper (
 
 	riscorvo_top # (
 		.FIFO_SLOTS(8),
-  		.RESET_ADDRESS(32'h0000_0000),
-  		.TRAP_BASE_ADDR(32'h0000_0000),
-  		.ENABLE_COMPRESSED_ISA(1),
-  		.ENABLE_MULT_DIV_ISA(1),
-  		.ENABLE_MISALIGN_ADDR(0),
-  		.ENABLE_CUSTOM_ISA(0),
-  		.MTIME_ADDR(MTIME_ADDR),
-  		.MTIMEH_ADDR(MTIMEH_ADDR),
-  		.MTIMECMP_ADDR(MTIMECMP_ADDR),
-  		.MTIMECMPH_ADDR(MTIMECMPH_ADDR),
-  		.MTIMEDIV_ADDR(MTIMEDIV_ADDR)
+    // .RESET_ADDRESS(32'h0000_0000),
+    .TRAP_BASE_ADDR(32'h0000_0000),
+    .ENABLE_COMPRESSED_ISA(1),
+    .ENABLE_MULT_DIV_ISA(1),
+    .ENABLE_MISALIGN_ADDR(0),
+    .ENABLE_CUSTOM_ISA(0),
+    .MTIME_ADDR(MTIME_ADDR),
+    .MTIMEH_ADDR(MTIMEH_ADDR),
+    .MTIMECMP_ADDR(MTIMECMP_ADDR),
+    .MTIMECMPH_ADDR(MTIMECMPH_ADDR),
+    .MTIMEDIV_ADDR(MTIMEDIV_ADDR)
 	) uut (
 		.clk(clock),
 		.reset_n(!reset),
 		.sync_trap_o(trap),
+    .boot_addr_i(32'd0),
+    .irq_soft_i(1'b0),
+    .irq_i(1'b0),
+    .irq_id_i(32'd0),
+    .irq_id_ack_o(),
 		.addr_data_mem_o(addr_data_mem),
 		// Instruction memory interface
 		.valid_instr_o(valid_instr),
